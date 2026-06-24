@@ -3,6 +3,7 @@
 Projeto da disciplina de **Sistemas a Eventos Discretos (SED)**, desenvolvido na ferramenta **Supremica** usando a Teoria de Controle Supervisório (autômatos finitos, síntese de supervisor).
 
 **Aluna:** Gabriela de Sousa Andrade — Matrícula 121110619
+
 **Vídeo de demonstração:** [https://youtu.be/9dBA4fnIx64?si=Xhm50QUceaMPCOru]
 
 ---
@@ -25,7 +26,7 @@ O objetivo do projeto é sintetizar um **supervisor** que coordene o uso desses 
 
 ## 2. Conceitos de Controle Supervisório
 
-O projeto aplica a Teoria de Controle Supervisório (Ramadge–Wonham), na qual o sistema é modelado por dois tipos de autômato:
+O projeto aplica a Teoria de Controle Supervisório, na qual o sistema é modelado por dois tipos de autômato:
 
 - **Plantas:** descrevem o comportamento físico do sistema — tudo que ele *consegue* fazer, inclusive situações indesejadas. Aqui, as plantas são o Trem 1 e o Trem 2.
 - **Especificações:** descrevem as regras que se deseja impor (segurança e coordenação). Aqui, são o Túnel, a Plataforma, a Prioridade 1 e a Prioridade 2.
