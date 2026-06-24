@@ -2,7 +2,7 @@
 
 Projeto da disciplina de **Sistemas a Eventos Discretos (SED)**, desenvolvido na ferramenta **Supremica** usando a Teoria de Controle Supervisório (autômatos finitos, síntese de supervisor).
 
-**Autora:** Gabriela de Sousa Andrade — Matrícula 121110619
+**Aluna:** Gabriela de Sousa Andrade — Matrícula 121110619
 **Vídeo de demonstração:** [inserir link do YouTube aqui]
 
 ---
@@ -133,9 +133,9 @@ O supervisor resultante possui **24 estados, 12 eventos e 32 transições**. Com
 
 ![Resultado da síntese no Analyzer](figuras/sintese.png)
 
-A ausência de deadlock foi confirmada formalmente pela verificação `Controllability and nonblocking` do Supremica, que retornou **"The system is controllable and nonblocking!"**.
+A ausência de deadlock foi confirmada formalmente pela verificação `Deadlock Check` do Supremica, que retornou **"Model trens_tunel is deadlock free."**.
 
-![Verificação de não-bloqueio](figuras/verificacao.png)
+
 
 ---
 
@@ -147,7 +147,7 @@ O comportamento foi validado na aba **Simulator** do Supremica, com todos os aut
 - o supervisor desabilita preventivamente os eventos que levariam à espera circular;
 - a partir de qualquer estado, os trens sempre conseguem completar seu ciclo e voltar a circular (não-bloqueio).
 
-![Simulação do sistema controlado](figuras/simulacao.png)
+
 
 ---
 
