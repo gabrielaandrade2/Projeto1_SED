@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module xmlns="http://waters.sourceforge.net/xsd/module" xmlns:B="http://waters.sourceforge.net/xsd/base" Name="trens_tunel">
+<EventDeclList>
+<EventDecl Kind="CONTROLLABLE" Name="ocupa_plat_saida1"/>
+<EventDecl Kind="CONTROLLABLE" Name="entra1"/>
+<EventDecl Kind="CONTROLLABLE" Name="volta1"/>
+<EventDecl Kind="CONTROLLABLE" Name="ocupa_plat_chegada1"/>
+<EventDecl Kind="UNCONTROLLABLE" Name="sai1"/>
+<EventDecl Kind="UNCONTROLLABLE" Name="libera_plat1"/>
+<EventDecl Kind="CONTROLLABLE" Name="ocupa_plat_saida2"/>
+<EventDecl Kind="CONTROLLABLE" Name="entra2"/>
+<EventDecl Kind="CONTROLLABLE" Name="volta2"/>
+<EventDecl Kind="CONTROLLABLE" Name="ocupa_plat_chegada2"/>
+<EventDecl Kind="UNCONTROLLABLE" Name="sai2"/>
+<EventDecl Kind="UNCONTROLLABLE" Name="libera_plat2"/>
+<EventDecl Kind="PROPOSITION" Name="accepting"/>
+<EventDecl Kind="PROPOSITION" Name=":accepting"/>
+</EventDeclList>
+<ComponentList>
+<SimpleComponent Kind="PLANT" Name="Trem1">
+<Graph>
+<NodeList>
+<SimpleNode Initial="true" Name="Em_A">
+<EventList>
+<SimpleIdentifier Name="accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="624" Y="144"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="PlatSaida">
+<PointGeometry>
+<Point X="816" Y="144"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-27" Y="-20"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="TunelIda">
+<PointGeometry>
+<Point X="1008" Y="144"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="PlatChegada">
+<PointGeometry>
+<Point X="624" Y="256"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-34" Y="11"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="TunelVolta">
+<PointGeometry>
+<Point X="816" Y="256"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-33" Y="-21"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Em_B">
+<PointGeometry>
+<Point X="1008" Y="256"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+</NodeList>
+<EdgeList>
+<Edge Source="Em_A" Target="PlatSaida">
+<LabelBlock>
+<SimpleIdentifier Name="ocupa_plat_saida1"/>
+</LabelBlock>
+</Edge>
+<Edge Source="PlatSaida" Target="TunelIda">
+<LabelBlock>
+<SimpleIdentifier Name="entra1"/>
+</LabelBlock>
+</Edge>
+<Edge Source="TunelIda" Target="Em_B">
+<LabelBlock>
+<SimpleIdentifier Name="sai1"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Em_B" Target="TunelVolta">
+<LabelBlock>
+<SimpleIdentifier Name="volta1"/>
+</LabelBlock>
+</Edge>
+<Edge Source="TunelVolta" Target="PlatChegada">
+<LabelBlock>
+<SimpleIdentifier Name="ocupa_plat_chegada1"/>
+</LabelBlock>
+</Edge>
+<Edge Source="PlatChegada" Target="Em_A">
+<LabelBlock>
+<SimpleIdentifier Name="libera_plat1"/>
+</LabelBlock>
+</Edge>
+</EdgeList>
+</Graph>
+</SimpleComponent>
+<SimpleComponent Kind="PLANT" Name="Trem2">
+<Graph>
+<NodeList>
+<SimpleNode Initial="true" Name="Em_A">
+<EventList>
+<SimpleIdentifier Name="accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="128" Y="128"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="PlatSaida">
+<PointGeometry>
+<Point X="320" Y="128"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-27" Y="-20"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="TunelIda">
+<PointGeometry>
+<Point X="512" Y="128"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="PlatChegada">
+<PointGeometry>
+<Point X="128" Y="240"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-34" Y="11"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="TunelVolta">
+<PointGeometry>
+<Point X="320" Y="240"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-33" Y="-21"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Em_C">
+<PointGeometry>
+<Point X="512" Y="240"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+</NodeList>
+<EdgeList>
+<Edge Source="Em_A" Target="PlatSaida">
+<LabelBlock>
+<SimpleIdentifier Name="ocupa_plat_saida2"/>
+</LabelBlock>
+</Edge>
+<Edge Source="PlatSaida" Target="TunelIda">
+<LabelBlock>
+<SimpleIdentifier Name="entra2"/>
+</LabelBlock>
+</Edge>
+<Edge Source="TunelIda" Target="Em_C">
+<LabelBlock>
+<SimpleIdentifier Name="sai2"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Em_C" Target="TunelVolta">
+<LabelBlock>
+<SimpleIdentifier Name="volta2"/>
+</LabelBlock>
+</Edge>
+<Edge Source="TunelVolta" Target="PlatChegada">
+<LabelBlock>
+<SimpleIdentifier Name="ocupa_plat_chegada2"/>
+</LabelBlock>
+</Edge>
+<Edge Source="PlatChegada" Target="Em_A">
+<LabelBlock>
+<SimpleIdentifier Name="libera_plat2"/>
+</LabelBlock>
+</Edge>
+</EdgeList>
+</Graph>
+</SimpleComponent>
+<SimpleComponent Kind="SPEC" Name="Tunel">
+<Graph>
+<NodeList>
+<SimpleNode Initial="true" Name="Vazio">
+<EventList>
+<SimpleIdentifier Name="accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="336" Y="64"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-14" Y="25"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Trem1Dentro">
+<PointGeometry>
+<Point X="144" Y="64"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-89" Y="-6"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Trem2Dentro">
+<PointGeometry>
+<Point X="544" Y="64"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="11" Y="-7"/>
+</LabelGeometry>
+</SimpleNode>
+</NodeList>
+<EdgeList>
+<Edge Source="Vazio" Target="Trem2Dentro">
+<LabelBlock>
+<SimpleIdentifier Name="entra2"/>
+<LabelGeometry Anchor="NW">
+<Point X="-25" Y="-22"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="445" Y="-17"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Trem2Dentro" Target="Vazio">
+<LabelBlock>
+<SimpleIdentifier Name="sai2"/>
+<LabelGeometry Anchor="NW">
+<Point X="-11" Y="7"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="448" Y="154"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Vazio" Target="Trem1Dentro">
+<LabelBlock>
+<SimpleIdentifier Name="entra1"/>
+<LabelGeometry Anchor="NW">
+<Point X="-21" Y="-23"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="237" Y="-16"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Trem1Dentro" Target="Vazio">
+<LabelBlock>
+<SimpleIdentifier Name="sai1"/>
+<LabelGeometry Anchor="NW">
+<Point X="-14" Y="9"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="243" Y="152"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Vazio" Target="Trem1Dentro">
+<LabelBlock>
+<SimpleIdentifier Name="volta1"/>
+<LabelGeometry Anchor="NW">
+<Point X="-19" Y="-24"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="238" Y="28"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Vazio" Target="Trem2Dentro">
+<LabelBlock>
+<SimpleIdentifier Name="volta2"/>
+<LabelGeometry Anchor="NW">
+<Point X="-22" Y="-25"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="447" Y="28"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Trem1Dentro" Target="Vazio">
+<LabelBlock>
+<SimpleIdentifier Name="ocupa_plat_chegada1"/>
+<LabelGeometry Anchor="NW">
+<Point X="-67" Y="8"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="241" Y="87"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Trem2Dentro" Target="Vazio">
+<LabelBlock>
+<SimpleIdentifier Name="ocupa_plat_chegada2"/>
+<LabelGeometry Anchor="NW">
+<Point X="-65" Y="4"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="443" Y="92"/>
+</SplineGeometry>
+</Edge>
+</EdgeList>
+</Graph>
+</SimpleComponent>
+<SimpleComponent Kind="SPEC" Name="Plataforma">
+<Graph>
+<NodeList>
+<SimpleNode Initial="true" Name="Livre">
+<EventList>
+<SimpleIdentifier Name="accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="368" Y="208"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-14" Y="17"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Trem1NaPlat">
+<PointGeometry>
+<Point X="144" Y="208"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-87" Y="-7"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Trem2NaPlat">
+<PointGeometry>
+<Point X="592" Y="208"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="11" Y="-6"/>
+</LabelGeometry>
+</SimpleNode>
+</NodeList>
+<EdgeList>
+<Edge Source="Livre" Target="Trem1NaPlat">
+<LabelBlock>
+<SimpleIdentifier Name="ocupa_plat_chegada1"/>
+<LabelGeometry Anchor="NW">
+<Point X="-68" Y="-22"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="255" Y="136"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Livre" Target="Trem1NaPlat">
+<LabelBlock>
+<SimpleIdentifier Name="ocupa_plat_saida1"/>
+<LabelGeometry Anchor="NW">
+<Point X="-56" Y="-21"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="256" Y="181"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Livre" Target="Trem2NaPlat">
+<LabelBlock>
+<SimpleIdentifier Name="ocupa_plat_chegada2"/>
+<LabelGeometry Anchor="NW">
+<Point X="-68" Y="-23"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="481" Y="135"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Livre" Target="Trem2NaPlat">
+<LabelBlock>
+<SimpleIdentifier Name="ocupa_plat_saida2"/>
+<LabelGeometry Anchor="NW">
+<Point X="-56" Y="-22"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="481" Y="181"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Trem1NaPlat" Target="Livre">
+<LabelBlock>
+<SimpleIdentifier Name="entra1"/>
+<LabelGeometry Anchor="NW">
+<Point X="-21" Y="6"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="259" Y="232"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Trem1NaPlat" Target="Livre">
+<LabelBlock>
+<SimpleIdentifier Name="libera_plat1"/>
+<LabelGeometry Anchor="NW">
+<Point X="-38" Y="1"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="261" Y="279"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Trem2NaPlat" Target="Livre">
+<LabelBlock>
+<SimpleIdentifier Name="libera_plat2"/>
+<LabelGeometry Anchor="NW">
+<Point X="-36" Y="4"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="485" Y="274"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Trem2NaPlat" Target="Livre">
+<LabelBlock>
+<SimpleIdentifier Name="entra2"/>
+<LabelGeometry Anchor="NW">
+<Point X="-17" Y="5"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="481" Y="233"/>
+</SplineGeometry>
+</Edge>
+</EdgeList>
+</Graph>
+</SimpleComponent>
+<SimpleComponent Kind="SPEC" Name="Prioridade1">
+<Graph>
+<NodeList>
+<SimpleNode Initial="true" Name="Livre">
+<EventList>
+<SimpleIdentifier Name="accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="464" Y="496"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-14" Y="-28"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="T1Saindo">
+<PointGeometry>
+<Point X="240" Y="496"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-65" Y="-7"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="T2Saindo">
+<PointGeometry>
+<Point X="688" Y="496"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="10" Y="-7"/>
+</LabelGeometry>
+</SimpleNode>
+</NodeList>
+<EdgeList>
+<Edge Source="Livre" Target="T1Saindo">
+<LabelBlock>
+<SimpleIdentifier Name="ocupa_plat_saida1"/>
+<LabelGeometry Anchor="NW">
+<Point X="-57" Y="-23"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="347" Y="467"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="T1Saindo" Target="Livre">
+<LabelBlock>
+<SimpleIdentifier Name="entra1"/>
+<LabelGeometry Anchor="NW">
+<Point X="-23" Y="3"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="354" Y="516"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Livre" Target="T2Saindo">
+<LabelBlock>
+<SimpleIdentifier Name="ocupa_plat_saida2"/>
+<LabelGeometry Anchor="NW">
+<Point X="-57" Y="-21"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="570" Y="466"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="T2Saindo" Target="Livre">
+<LabelBlock>
+<SimpleIdentifier Name="entra2"/>
+<LabelGeometry Anchor="NW">
+<Point X="-18" Y="3"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="579" Y="519"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="T1Saindo" Target="T1Saindo">
+<LabelBlock>
+<SimpleIdentifier Name="volta1"/>
+<LabelGeometry Anchor="NW">
+<Point X="-21" Y="-21"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="235" Y="467"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Livre" Target="Livre">
+<LabelBlock>
+<SimpleIdentifier Name="volta1"/>
+<LabelGeometry Anchor="NW">
+<Point X="-21" Y="3"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="436" Y="534"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="T2Saindo" Target="T2Saindo">
+<LabelBlock>
+<SimpleIdentifier Name="volta2"/>
+<LabelGeometry Anchor="NW">
+<Point X="-18" Y="-20"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="687" Y="469"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Livre" Target="Livre">
+<LabelBlock>
+<SimpleIdentifier Name="volta2"/>
+<LabelGeometry Anchor="NW">
+<Point X="-16" Y="7"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="498" Y="530"/>
+</SplineGeometry>
+</Edge>
+</EdgeList>
+</Graph>
+</SimpleComponent>
+<SimpleComponent Kind="SPEC" Name="Prioridade2">
+<Graph>
+<NodeList>
+<SimpleNode Initial="true" Name="Vazio">
+<EventList>
+<SimpleIdentifier Name="accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="320" Y="176"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-17" Y="-33"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="VoltaTrem1">
+<PointGeometry>
+<Point X="112" Y="176"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-74" Y="3"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="VoltaTrem2">
+<PointGeometry>
+<Point X="528" Y="176"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="7" Y="0"/>
+</LabelGeometry>
+</SimpleNode>
+</NodeList>
+<EdgeList>
+<Edge Source="Vazio" Target="VoltaTrem1">
+<LabelBlock>
+<SimpleIdentifier Name="volta1"/>
+<LabelGeometry Anchor="NW">
+<Point X="-19" Y="-21"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="213" Y="113"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Vazio" Target="VoltaTrem2">
+<LabelBlock>
+<SimpleIdentifier Name="volta2"/>
+<LabelGeometry Anchor="NW">
+<Point X="-21" Y="-20"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="424" Y="114"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="VoltaTrem1" Target="Vazio">
+<LabelBlock>
+<SimpleIdentifier Name="ocupa_plat_chegada1"/>
+<LabelGeometry Anchor="NW">
+<Point X="-69" Y="2"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="217" Y="224"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="VoltaTrem2" Target="Vazio">
+<LabelBlock>
+<SimpleIdentifier Name="ocupa_plat_chegada2"/>
+<LabelGeometry Anchor="NW">
+<Point X="-63" Y="1"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="428" Y="224"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="VoltaTrem1" Target="VoltaTrem1">
+<LabelBlock>
+<SimpleIdentifier Name="ocupa_plat_saida1"/>
+<LabelGeometry Anchor="NW">
+<Point X="-70" Y="-21"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="93" Y="144"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="VoltaTrem2" Target="VoltaTrem2">
+<LabelBlock>
+<SimpleIdentifier Name="ocupa_plat_saida2"/>
+<LabelGeometry Anchor="NW">
+<Point X="-47" Y="-24"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="554" Y="143"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Vazio" Target="Vazio">
+<LabelBlock>
+<SimpleIdentifier Name="ocupa_plat_saida2"/>
+<LabelGeometry Anchor="NW">
+<Point X="6" Y="-29"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="346" Y="199"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Vazio" Target="Vazio">
+<LabelBlock>
+<SimpleIdentifier Name="ocupa_plat_saida1"/>
+<LabelGeometry Anchor="NW">
+<Point X="-117" Y="-25"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="291" Y="196"/>
+</SplineGeometry>
+</Edge>
+</EdgeList>
+</Graph>
+</SimpleComponent>
+</ComponentList>
+</Module>
