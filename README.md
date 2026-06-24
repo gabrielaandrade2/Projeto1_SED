@@ -3,7 +3,7 @@
 Projeto da disciplina de **Sistemas a Eventos Discretos (SED)**, desenvolvido na ferramenta **Supremica** usando a Teoria de Controle Supervisório (autômatos finitos, síntese de supervisor).
 
 **Aluna:** Gabriela de Sousa Andrade — Matrícula 121110619
-**Vídeo de demonstração:** [inserir link do YouTube aqui]
+**Vídeo de demonstração:** [https://youtu.be/9dBA4fnIx64?si=Xhm50QUceaMPCOru]
 
 ---
 
